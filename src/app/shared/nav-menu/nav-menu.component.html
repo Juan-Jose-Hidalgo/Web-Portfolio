@@ -1,0 +1,40 @@
+<div [classList]="menu">
+
+    <!--* Image -->
+    <div class="menu__banner">
+        <picture>
+            <source [classList]="banner" srcset="/assets/img/perfil.webp" type="image/webp" accept="image/webp">
+            <img [classList]="banner" ngSrc="/assets/img/perfil.jpg" fill alt="Imagen de perfil">
+        </picture>
+    </div>
+
+    <!--* Nav -->
+    <div class="menu__links">
+        <nav class="nav">
+            <!--ToDo: fix links -->
+            <ul class="nav__ul">
+                <li class="nav__li"><a class="nav__a" (click)="navigateTo('home')" routerLink="/inicio"
+                        data-text="Inicio" title="Inicio">Inicio</a>
+                </li>
+                <li class="nav__li"><a class="nav__a" (click)="navigateTo('about')" routerLink="/inicio"
+                        data-text="Sobre mi" title="Sobre-mí">Sobre
+                        mi</a></li>
+                <li class="nav__li"><a class="nav__a" (click)="navigateTo('projects')" routerLink="/inicio"
+                        data-text="Proyectos" title="Proyectos">Proyectos</a></li>
+                <li class="nav__li"><a class="nav__a" (click)="navigateTo('contact')" routerLink="/inicio"
+                        data-text="Contacto" title="Contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!--* Social-links component -->
+        <div class="links__social" (click)="menuToggle()">
+            <app-social-links></app-social-links>
+        </div>
+
+    </div>
+</div>
+
+<!--* Menu button -->
+<button class="btn-menu" (click)="menuToggle()" aria-label="Menu">
+    <i class="fa-solid btn--menu__icon" [ngClass]="menuIcon"></i>
+</button>

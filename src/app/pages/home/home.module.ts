@@ -8,6 +8,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ContactComponent } from './components/contact/contact.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    SharedModule
   ]
 })
 export class HomeModule { }

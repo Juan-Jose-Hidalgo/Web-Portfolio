@@ -1,12 +1,21 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { SocialLinksComponent } from './social-links/social-links.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    NavMenuComponent,
+    SocialLinksComponent
+  ],
+  exports: [
+    NavMenuComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    NgOptimizedImage
   ]
 })
 export class SharedModule { }
