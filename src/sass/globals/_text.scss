@@ -1,0 +1,63 @@
+@use "mixins" as mix;
+@use "variables" as var;
+
+.heading-1 {
+    color: map-get($map: var.$colors-map, $key: "primary");
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 1px 1px 1px map-get($map: var.$colors-map, $key: "white");
+
+    @media (min-width: 576px) {
+        font-size: 2.8rem;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 3.5rem;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: 4rem;
+    }
+
+}
+
+.heading-2 {
+    font-size: 1.8rem;
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    padding: 3rem 0;
+    text-align: center;
+
+    @media (min-width: 768px) {
+        font-size: 2.8rem;
+    }
+
+    @media (min-width: 992px) {
+        font-size: 3rem;
+    }
+
+    &::first-letter {
+        color: map-get($map: var.$colors-map, $key: "primary");
+    }
+
+}
+
+.subheading-1 {
+    color: map-get($map: var.$colors-map, $key: "secondary");
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    font-size: 1.4rem;
+    text-align: center;
+
+    @media (min-width: 768px) {
+        font-size: 2rem;
+    }
+}
+
+.regular-text {
+    font-size: 1rem;
+
+    @media (min-width: 768px) {
+        font-size: 1.2rem;
+    }
+}

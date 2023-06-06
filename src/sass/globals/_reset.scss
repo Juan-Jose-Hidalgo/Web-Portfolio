@@ -1,0 +1,193 @@
+@use "variables" as var;
+
+//* (Optional) Deactivate animations
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+//* Reset paddings & margins 
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+*::before,
+*::after {
+    display: block;
+}
+
+//* Format images
+img,
+picture,
+video,
+iframe,
+figure {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    /* (Opcional) */
+    object-fit: cover;
+    /* (Opcional) */
+    object-position: center center;
+}
+
+//* Reset the links to work as boxes...
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+}
+
+//* ... except those found in paragraphs
+p a {
+    display: inline;
+}
+
+//* Format <li> 
+li {
+    list-style-type: none;
+}
+
+//* (Optional) smooth anchors
+html {
+    scroll-behavior: smooth;
+}
+
+//* Deactivate default styles of the main text labels
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+
+//* Avoid problems with pseudo-elements in quotes
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+//* (Optional) Configure the selected text
+::selection {
+    background-color: map-get(var.$colors-map, "primary");
+    color: map-get(var.$colors-map, "secondary");
+}
+
+//* We level typography and form placement problems.
+form,
+input,
+textarea,
+select,
+button,
+label {
+    font-family: inherit;
+    font-size: inherit;
+    hyphens: auto;
+    background-color: transparent;
+    color: inherit;
+    /* (Optional) */
+    appearance: none;
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit browsers */
+    opacity: 0;
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    opacity: 0;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    opacity: 0;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    opacity: 0;
+}
+
+//* Reset tables
+table,
+tr,
+td {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+//* Avoid SVG problems
+svg {
+    width: 100%;
+    display: block;
+    fill: currentColor;
+}
+
+//* Configure all tipography
+body {
+    min-height: 100vh;
+    font-size: 100%;
+    font-family: map-get(var.$fonts-map, "primary");
+    color: map-get(var.$colors-map, "text");
+    background-color: map-get($map: var.$colors-map, $key: "white");
+    /* (Optional) */
+    hyphens: auto;
+    /* (Optional) */
+    font-smooth: always;
+    /* (Optional) */
+    -webkit-font-smoothing: antialiased;
+    /* (Optional) */
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+.highlighted {
+    color: map-get($map: var.$colors-map, $key: "secondary");
+}
+
+.mat-mdc-snack-bar-container {
+    &.snackbar--success {
+        --mdc-snackbar-container-color: #57a0e4;
+        --mat-mdc-snack-bar-button-color: #fff;
+        --mdc-snackbar-supporting-text-color: #fff;
+        text-align: center;
+    }
+}
+
+.mat-mdc-snack-bar-container {
+    &.snackbar--warning {
+        --mdc-snackbar-container-color: #f44336;
+        --mat-mdc-snack-bar-button-color: #fff;
+        --mdc-snackbar-supporting-text-color: #fff;
+        text-align: center;
+    }
+}
