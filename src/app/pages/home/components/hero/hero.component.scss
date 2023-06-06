@@ -1,0 +1,47 @@
+@use "variables" as var;
+@use "mixins" as mix;
+
+.hero {
+    @include mix.flex-box(column, norwap, center, center);
+    width: 100;
+    height: 100vh;
+    background-color: map-get($map: var.$colors-map, $key: "black");
+}
+
+.hero__wrapper {
+    @include mix.flex-box(row, nowrap, space-between, center);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), url("/assets/img/hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.hero__cover {
+    display: none;
+
+    @media(min-width: 1330px) {
+        display: block;
+        position: relative;
+        width: 37.5rem;
+        height: 100%;
+    }
+}
+
+.hero__info {
+    @include mix.flex-box(column, nowrap, center, center);
+    gap: 1.5em;
+    margin: 0 auto;
+    color: map-get($map: var.$colors-map, $key: "white");
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+
+    @media(min-width:1330px) {
+        align-items: flex-start;
+    }
+}
+
+.hero__span {
+    font-size: 1.2em;
+    font-style: italic;
+}
