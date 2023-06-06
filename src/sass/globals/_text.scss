@@ -5,37 +5,24 @@
     color: map-get($map: var.$colors-map, $key: "primary");
     font-family: map-get($map: var.$fonts-map, $key: "secondary");
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
-    text-shadow: 1px 1px 1px map-get($map: var.$colors-map, $key: "white");
-
-    @media (min-width: 576px) {
-        font-size: 2.8rem;
-    }
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px map-get($map: var.$colors-map, $key: "secondary");
 
     @media (min-width: 768px) {
         font-size: 3.5rem;
     }
 
-    @media (min-width: 1200px) {
-        font-size: 4rem;
+    @media (min-width: 1400px) {
+        font-size: 4.5rem;
     }
 
 }
 
 .heading-2 {
-    font-size: 1.8rem;
-    font-family: map-get($map: var.$fonts-map, $key: "secondary");
-    padding: 3rem 0;
-    text-align: center;
-
-    @media (min-width: 768px) {
-        font-size: 2.8rem;
-    }
-
-    @media (min-width: 992px) {
-        font-size: 3rem;
-    }
+    font-size: 2em;
+    font-weight: bold;
 
     &::first-letter {
         color: map-get($map: var.$colors-map, $key: "primary");

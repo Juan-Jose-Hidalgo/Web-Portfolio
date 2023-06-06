@@ -1,0 +1,40 @@
+@use "variables" as var;
+
+.btn-grow-spin {
+    color: map-get($map: var.$colors-map, $key: "primary");
+    border: 2px solid map-get($map: var.$colors-map, $key: "primary");
+    padding: 1rem 1.25rem;
+    border-radius: 3px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    letter-spacing: .3em;
+
+    &:hover {
+        color: map-get($map: var.$colors-map, $key: "white");
+
+        &::after {
+            transition: all 0.3s ease-out;
+            transform: scale(1, 1) rotate(0deg);
+        }
+    }
+
+    &::after {
+        content: "";
+        background: map-get($map: var.$colors-map, $key: "primary");
+        position: absolute;
+        z-index: -1;
+        padding: 1rem 1.25rem;
+        display: block;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        transform: scale(0, 0) rotate(-180deg);
+        transition: all 0.3s ease;
+    }
+}

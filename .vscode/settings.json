@@ -1,5 +1,7 @@
 {
     "conventionalCommits.scopes": [
-        "main"
+        "main",
+        "develop",
+        "home"
     ]
 }
