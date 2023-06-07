@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "main",
         "develop",
-        "home"
+        "home",
+        "ngrx"
     ]
 }
