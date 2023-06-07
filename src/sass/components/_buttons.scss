@@ -1,7 +1,7 @@
 @use "mixins" as mix;
 @use "variables" as var;
 
-.btn-grow-spin {
+.btn-spin {
     color: map-get($map: var.$colors-map, $key: "primary");
     border: 2px solid map-get($map: var.$colors-map, $key: "primary");
     padding: 1rem 1.25rem;
@@ -14,9 +14,10 @@
     font-weight: bold;
     font-family: map-get($map: var.$fonts-map, $key: "secondary");
     letter-spacing: .3em;
+    text-align: center;
 
     &:hover {
-        color: map-get($map: var.$colors-map, $key: "white");
+        color: map-get($map: var.$colors-map, $key: "white2");
 
         &::after {
             transition: all 0.3s ease-out;
@@ -37,6 +38,29 @@
         bottom: 0;
         transform: scale(0, 0) rotate(-180deg);
         transition: all 0.3s ease;
+    }
+}
+
+.btn-spin--small {
+    padding: 10px 16px;
+    letter-spacing: .1em;
+    font-size: .8em;
+
+    &::after {
+        padding: 8px 14px;
+    }
+}
+
+.btn-spin--accent {
+    color: map-get($map: var.$colors-map, $key: "accent");
+    border: 2px solid map-get($map: var.$colors-map, $key: "accent");
+
+    &:hover {
+        color: map-get($map: var.$colors-map, $key: "white2");
+    }
+
+    &::after{
+        background: map-get($map: var.$colors-map, $key: "accent");
     }
 }
 

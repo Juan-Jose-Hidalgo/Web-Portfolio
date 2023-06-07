@@ -1,0 +1,21 @@
+<div class="home-project__wrapper">
+    <div class="home-project__image">
+        <picture>
+            <source [srcset]="project.coverImageWebp" type="image/webp" accpet="image/webp">
+            <img [ngSrc]="project.coverImage" fill alt="Imagen de portada del proyecto" class="home-project__img">
+        </picture>
+    </div>
+
+    <h3 class="subheading-1">{{project.title}}</h3>
+
+    <div class="home-project__text">
+        <p>{{project.shortDescription}}</p>
+    </div>
+
+    <div class="home-project__divider"></div>
+
+    <div class="home-project__actions">
+        <a href="#" class="btn-spin btn-spin--small">Leer más</a>
+        <a href="#" class="btn-spin btn-spin--small btn-spin--accent">Visitar página</a>
+    </div>
+</div>

@@ -1,1 +1,23 @@
-<p>projects works!</p>
+<section class="home-projects">
+
+    <h2 class="heading-2">Proyectos</h2>
+
+    <ul class="home-projects__list">
+
+        <li class="home-projects__li" *ngFor="let project of projects$ |async">
+            <article class="home-project">
+                <app-project [project]="project"></app-project>
+            </article>
+        </li>
+
+        <li class="home-projects__li">
+            <article class="home-project home-project--mock">
+                <span class="home-project__span">
+                    Próximamente
+                </span>
+            </article>
+        </li>
+
+    </ul>
+
+</section>

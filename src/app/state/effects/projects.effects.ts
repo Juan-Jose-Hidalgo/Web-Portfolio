@@ -11,7 +11,7 @@ export class ProjectsEffects {
             ofType('[Projects] Get Projects'),
             mergeMap(() => this.projectsService.getAll()
                 .pipe(
-                    map(projects => ({ type: '[Projects] Get Projects Success', tasks: projects })),
+                    map(projects => ({ type: '[Projects] Get Projects Success', projects })),
                     catchError((error: any) => of({ type: '[Projects] Get Projects Error', message: error.error.message }))
                 )
             )
