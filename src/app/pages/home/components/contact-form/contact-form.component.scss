@@ -1,0 +1,113 @@
+@use "variables" as var;
+@use "mixins" as mix;
+
+.form {
+    @include mix.flex-box(column, nowrap, space-between, initial);
+    padding: 2rem;
+    gap: 1.8rem;
+}
+
+.form__group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form__input {
+    display: block;
+    width: 100%;
+    padding: 0.5em 1em;
+    border: none;
+    color: map-get($map: var.$colors-map, $key: "white");
+    border-bottom: 2px solid #ddd;
+    transition: all 0.3s;
+
+    &:focus,
+    &:not(:placeholder-shown) {
+        outline: none;
+        border-bottom: 2px solid map-get($map: var.$colors-map, $key: "primary");
+    }
+
+    &:focus~.form__label,
+    &:not(:placeholder-shown)~.form__label {
+        top: -1.2em;
+        font-size: 0.8em;
+        color: map-get($map: var.$colors-map, $key: "accent");
+    }
+}
+
+.form__input--checkbox {
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.3rem;
+    height: 1.3rem;
+    border: 2px solid map-get($map: var.$colors-map, $key: "primary");
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+
+    &::before {
+        content: "";
+        width: .8rem;
+        height: .8rem;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--form-control-color);
+        background-color: map-get($map: var.$colors-map, $key: "primary");
+        transform-origin: bottom left;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    }
+
+    &:checked::before {
+        transform: scale(1);
+    }
+}
+
+.form__label--legal {
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    font-size: 1.1em;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    color: map-get($map: var.$colors-map, $key: "accent");
+}
+
+.form__label {
+    position: absolute;
+    top: -0.2em;
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    color: map-get($map: var.$colors-map, $key: "primary");
+    transition: all 0.3s;
+}
+
+.form__error {
+    margin-top: .5rem;
+    visibility: hidden;
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    font-size: .8em;
+}
+
+.form__error--visible {
+    color: map-get($map: var.$colors-map, $key: "warn");
+    visibility: visible;
+}
+
+.form__actions {
+    @include mix.flex-box(row, wrap, space-between, center);
+
+    @media (min-width:768px) {
+        gap: 1rem;
+    }
+}
+
+.btn-spin {
+    width: 100%;
+
+    @media (min-width:1330px) {
+        width: auto;
+    }
+}

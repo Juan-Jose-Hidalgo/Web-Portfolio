@@ -1,0 +1,42 @@
+@use "variables" as var;
+@use "mixins" as mix;
+
+.legal__title,
+.legal__content {
+    color: map-get($map: var.$colors-map, $key: "white2");
+}
+
+.legal__title {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.legal__subtitle {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.legal__content {
+    @include mix.flex-box(column);
+    line-height: 1.5;
+    gap: 1rem;
+}
+
+.legal__text {
+    font-family: map-get($map: var.$fonts-map, $key: "primary");
+    font-size: .8em;
+}
+
+.legal__buttons {
+    @include mix.flex-box(column);
+    gap: .5rem;
+    width: 100%;
+
+    @media (min-width:992px) {
+        width: initial;
+        flex-direction: row;
+        align-self: flex-end;
+    }
+}

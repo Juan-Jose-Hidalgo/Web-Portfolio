@@ -10,6 +10,9 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProjectComponent } from './components/project/project.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,12 +23,15 @@ import { ProjectComponent } from './components/project/project.component';
     AboutComponent,
     ProjectsComponent,
     ContactComponent,
-    ProjectComponent
+    ProjectComponent,
+    ContactFormComponent
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
+    HttpClientModule,
     NgOptimizedImage,
+    ReactiveFormsModule,
     SharedModule
   ]
 })
