@@ -18,15 +18,18 @@ import { ROOT_REDUCERS } from './state/app.state';
 import { ProjectsEffects } from './state/effects/projects.effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
+    SharedModule,
     //* Firebase
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
@@ -36,7 +39,6 @@ import { HttpClientModule } from '@angular/common/http';
     EffectsModule.forRoot([
       ProjectsEffects
     ]),
-    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

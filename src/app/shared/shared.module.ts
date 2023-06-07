@@ -4,6 +4,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { SocialLinksComponent } from './social-links/social-links.component';
 import { MaterialModule } from './material/material.module';
 import { LegalComponent } from './legal/legal.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -11,11 +12,13 @@ import { LegalComponent } from './legal/legal.component';
   declarations: [
     NavMenuComponent,
     SocialLinksComponent,
-    LegalComponent
+    LegalComponent,
+    FooterComponent
   ],
   exports: [
     NavMenuComponent,
-    MaterialModule
+    MaterialModule,
+    FooterComponent
   ],
   imports: [
     CommonModule,

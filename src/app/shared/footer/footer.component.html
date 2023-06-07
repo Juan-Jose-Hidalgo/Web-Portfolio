@@ -1,0 +1,18 @@
+<footer class="foot">
+    <div class="wave">
+        <svg class="wave__svg" viewBox="0 0 500 150" preserveAspectRatio="none">
+            <path class="wave__path"
+                d="M0.00,49.98 C178.61,-7.40 419.01,158.38 542.60,57.72 L527.93,-18.25 L-25.67,-74.50 Z">
+            </path>
+        </svg>
+    </div>
+
+    <div class="foot__container">
+        <p class="foot__p">© Juan Hidalgo Yañez - {{year | date: "YYYY"}}</p>
+        <p class="foot__p foot__p--legal" (click)="openDialog()">Aviso legal sobre protección de datos personales</p>
+        <div class="redes">
+            <app-social-links></app-social-links>
+        </div>
+    </div>
+</footer>
+
