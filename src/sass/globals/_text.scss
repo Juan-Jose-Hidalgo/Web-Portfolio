@@ -23,11 +23,20 @@
 .heading-2 {
     font-size: 2em;
     font-weight: bold;
+    text-align: center;
+    margin: 1rem 0;
 
     &::first-letter {
         color: map-get($map: var.$colors-map, $key: "primary");
     }
 
+    @media (min-width:768px) {
+        font-size: 3em;
+    }
+
+    @media (min-width:1330px) {
+        font-size: 3.5em;
+    }
 }
 
 .subheading-1 {

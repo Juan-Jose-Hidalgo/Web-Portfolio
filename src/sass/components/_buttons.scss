@@ -51,6 +51,19 @@
     }
 }
 
+.btn-spin--warn {
+    color: map-get($map: var.$colors-map, $key: "warn");
+    border: 2px solid map-get($map: var.$colors-map, $key: "warn");
+
+    &:hover {
+        color: map-get($map: var.$colors-map, $key: "white2");
+    }
+
+    &::after{
+        background: map-get($map: var.$colors-map, $key: "warn");
+    }
+}
+
 .btn-spin--accent {
     color: map-get($map: var.$colors-map, $key: "accent");
     border: 2px solid map-get($map: var.$colors-map, $key: "accent");

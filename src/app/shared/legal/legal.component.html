@@ -1,0 +1,60 @@
+<h2 mat-dialog-title class="legal__title">Aviso legal sobre protección de datos personales</h2>
+
+<div class="legal__content" mat-dialog-content>
+    <h3 class="legal__subtitle">Responsable del tratamiento de datos personales:</h3>
+
+    <ul>
+        <li class="legal__text">Nombre: ___.</li>
+        <li class="legal__text">Domicilio: ___</li>
+        <li class="legal__text">Email: ___</li>
+    </ul>
+
+    <h3 class="legal__subtitle">Finalidad del tratamiento de datos personales:</h3>
+
+    <p class="legal__text">Los datos personales proporcionados por los usuarios en el formulario de contacto de este
+        sitio web se recopilan
+        con el fin de permitir que el titular del sitio web reciba y responda a las consultas y solicitudes enviadas a
+        través del formulario.</p>
+
+    <h3 class="legal__subtitle">Legitimidad del tratamiento de datos personales:</h3>
+
+    <p class="legal__text">El tratamiento de los datos personales se basa en el consentimiento explícito y voluntario
+        del usuario
+        proporcionado a través del formulario de contacto.</p>
+
+    <h3 class="legal__subtitle">Destinatarios de los datos personales:</h3>
+
+    <p class="legal__text">Los datos personales no serán comunicados ni cedidos a terceros, salvo en los casos en que
+        exista una obligación
+        legal de hacerlo.</p>
+
+    <h3 class="legal__subtitle">Plazo de conservación de los datos personales:</h3>
+
+    <p class="legal__text">Los datos personales proporcionados por los usuarios se conservarán únicamente durante el
+        tiempo necesario para
+        cumplir con la finalidad para la que se recopilaron, a menos que el usuario solicite su supresión.</p>
+
+    <h3 class="legal__subtitle">Derechos del usuario:</h3>
+
+    <p class="legal__text">El usuario tiene derecho a acceder, rectificar, suprimir, oponerse, limitar o portar sus
+        datos personales. Para
+        ejercer estos derechos, el usuario puede ponerse en contacto con el titular del sitio web a través del correo
+        electrónico de contacto proporcionado en este aviso legal.</p>
+
+    <h3 class="legal__subtitle">Cambios en el aviso legal:</h3>
+
+    <p class="legal__text">El titular del sitio web se reserva el derecho de modificar este aviso legal en cualquier
+        momento, siempre que lo
+        considere necesario o apropiado. Las modificaciones se publicarán en el sitio web y se entenderán aceptadas
+        cuando el usuario continúe utilizando el sitio web después de su publicación.
+    </p>
+
+    <p class="legal__text">Con la aceptación de este aviso legal, el usuario declara haber leído y comprendido la
+        información proporcionada
+        sobre el tratamiento de sus datos personales por parte del titular del sitio web.</p>
+
+    <div class="legal__buttons" *ngIf="showButtons">
+        <button class="btn-spin btn-spin--small" [mat-dialog-close]="true">Aceptar</button>
+        <button class="btn-spin btn-spin--warn btn-spin--small" [mat-dialog-close]="false">Cancelar</button>
+    </div>
+</div>

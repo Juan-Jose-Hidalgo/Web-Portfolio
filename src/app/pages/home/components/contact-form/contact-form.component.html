@@ -1,0 +1,42 @@
+<form class="form" method="post" [formGroup]="contactForm">
+
+    <div class="form__group">
+        <input type="text" class="form__input" id="name" name="nombre" placeholder="nombre" formControlName="nombre">
+        <label for="name" class="form__label">Nombre:</label>
+        <div [classList]="fieldInvalid('nombre') ? errorClass : 'form__error'">{{getErrorMsg('nombre')}}</div>
+    </div>
+
+    <div class="form__group">
+        <input type="email" class="form__input" id="email-input" name="email" placeholder="email"
+            formControlName="email">
+        <label for="email-input" class="form__label">Correo electrónico:</label>
+        <div [classList]="fieldInvalid('email') ? errorClass : 'form__error'">{{getErrorMsg('email')}}</div>
+    </div>
+
+    <div class="form__group">
+        <input type="text" class="form__input" id="subject" name="asunto" placeholder="asunto" formControlName="asunto">
+        <label for="subject" class="form__label">Asunto:</label>
+        <div [classList]="fieldInvalid('asunto') ? errorClass : 'form__error'">{{getErrorMsg('asunto')}}</div>
+    </div>
+
+    <div class="form__group">
+        <textarea class="form__input" id="message" name="mensaje" placeholder="mensaje"
+            formControlName="mensaje"></textarea>
+        <label for="message" class="form__label">Mensaje:</label>
+        <div [classList]="fieldInvalid('mensaje') ? errorClass : 'form__error'">{{getErrorMsg('mensaje')}}</div>
+    </div>
+
+    <div class="form__actions">
+        <label class="form__label--legal" for="aviso_legal">
+            <input type="checkbox" class="form__input--checkbox" name="aviso_legal" id="aviso_legal"
+                formControlName="aviso_legal" />
+            <span (click)="openDialog()">He leído el aviso legal</span>
+        </label>
+        <div [classList]="fieldInvalid('aviso_legal') ? errorClass : 'form__error'">{{getErrorMsg('aviso_legal')}}</div>
+
+        <button class="btn-spin btn-spin--small" type="submit" (click)="send()">
+            <i class="fa fa-envelope"></i>
+            <span>Enviar</span>
+        </button>
+    </div>
+</form>
