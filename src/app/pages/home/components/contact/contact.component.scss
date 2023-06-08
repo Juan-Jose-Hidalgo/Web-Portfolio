@@ -1,19 +1,72 @@
 @use "variables" as var;
 @use "mixins" as mix;
 
-.contact{
-    width: 85%;
+.contact {
+    @include mix.flex-box(column, nowrap, flex-start, center);
+    gap: 2rem;
+    width: 100%;
     margin: 0 auto;
-    padding: 1rem;
+    padding-bottom: 6rem;
+
+    @media (min-width:768px) {
+        width: 85%;
+        max-width: 100rem;
+        margin: 0 auto;
+    }
 }
 
 .contact__container {
+    @include mix.flex-box(row, nowrap, space-between, center);
     width: 100%;
-    border-radius: .3125rem;
     background-color: map-get($map: var.$colors-map, $key: "black");
     overflow: hidden;
+
+    @media (min-width:768px) {
+        border-radius: .3125rem;
+    }
+
+    @media (min-width:1330px) {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    @media (min-width:1440px) {
+        width: 60%;
+    }
 }
 
 .contact__form {
     width: 100%;
+
+    @media (min-width: 1330px) {
+        width: calc(50% - 2rem);
+    }
+
+    @media (min-width:1440px) {
+        width: calc(60% - 1rem);
+    }
+}
+
+.contact__image {
+    display: none;
+
+    @media(min-width:1330px) {
+        position: relative;
+        display: block;
+        width: calc(50% - 2rem);
+        height: 37.5rem;
+    }
+
+    @media (min-width:1440px) {
+        width: calc(40% - 1rem);
+    }
+}
+
+.contact__img {
+    object-fit: cover;
+    object-position: 50% 50%;
+
+    @media (min-width: 1440px) {
+        object-fit: contain;
+    }
 }
