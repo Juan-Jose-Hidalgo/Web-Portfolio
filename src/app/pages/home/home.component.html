@@ -1,16 +1,30 @@
 <!--* Menu bar -->
-<app-nav-menu></app-nav-menu>
+<app-nav-menu (section)="scrollToSection($event)"></app-nav-menu>
 
-<!--* Header & hero -->
-<app-hero></app-hero>
+<ng-scrollbar #scrollbarRef class="scroll-bar">
+    <!--* Header & hero -->
+    <div #home>
+        <app-hero (section)="scrollToSection($event)"></app-hero>
+    </div>
 
-<main>
-    <!--* Projects list -->
-    <app-projects></app-projects>
+    <main class="home-main">
+        <!--* Projects list -->
+        <div #projects>
+            <app-projects></app-projects>
+        </div>
 
-    <!--* About section -->
-    <app-about></app-about>
+        <!--* About section -->
+        <div #about>
+            <app-about></app-about>
+        </div>
 
-    <!--* Contact section -->
-    <app-contact></app-contact>
-</main>
+        <!--* Contact section -->
+        <div #contact>
+            <app-contact></app-contact>
+        </div>
+    </main>
+
+    <!--* Footer -->
+    <app-footer></app-footer>
+
+</ng-scrollbar>

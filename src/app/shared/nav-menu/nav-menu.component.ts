@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-nav-menu',
@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-menu.component.scss']
 })
 export class NavMenuComponent {
+
+  @Output() section = new EventEmitter<string>();
 
   active = false;
 
@@ -21,7 +23,8 @@ export class NavMenuComponent {
     this.menuIcon = this.active ? 'fa-xmark' : 'fa-bars-staggered';
   }
 
-  navigateTo(fragment: string) {
-
+  navigateTo(section: string) {
+    this.menuToggle();
+    this.section.emit(section);
   }
 }

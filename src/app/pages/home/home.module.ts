@@ -13,6 +13,8 @@ import { ProjectComponent } from './components/project/project.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgScrollbarModule } from 'ngx-scrollbar';
+
 
 
 @NgModule({
@@ -31,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeRoutingModule,
     HttpClientModule,
     NgOptimizedImage,
+    NgScrollbarModule,
     ReactiveFormsModule,
     SharedModule
   ]
