@@ -4,10 +4,12 @@
 .home-projects {
     @include mix.flex-box(column, nowrap, flex-start, center);
     gap: 2rem;
-    width: 85%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem
+
+    @media (min-width:768px) {
+        width: 85%;
+        margin: 0 auto;
+        padding: 1rem;
+    }
 }
 
 .home-projects__list {
@@ -30,14 +32,16 @@
 
 .home-project {
     background-color: map-get($map: var.$colors-map, $key: "white2");
-    border-radius: 5px;
-    box-shadow: 0 3px 2px 0 rgb(0 0 0 / 14%), 0 1px 2px 0 rgb(0 0 0 / 12%), 0 3px 2px -1px rgb(0 0 0 / 40%);
     overflow: hidden;
-    transition: all .3s ease;
 
-    &:hover {
-        box-shadow: 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%), 0 3px 5px -1px rgb(0 0 0 / 40%);
-        transform: scale(1.01);
+    @media(min-width:768px) {
+        border-radius: 5px;
+        box-shadow: 0 3px 2px 0 rgb(0 0 0 / 14%), 0 1px 2px 0 rgb(0 0 0 / 12%), 0 3px 2px -1px rgb(0 0 0 / 40%);
+
+        &:hover {
+            box-shadow: 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%), 0 3px 5px -1px rgb(0 0 0 / 40%);
+            transform: scale(1.01);
+        }
     }
 
 }
@@ -47,7 +51,7 @@
 
     @media (min-width:1330px) {
         @include mix.flex-box(column, nowrap, center, center);
-        height: 400px;
+        height: 350px;
         background-image: url("https://i.postimg.cc/D0PWhptv/question.jpg");
         background-size: cover;
         background-position: 50% 50%;

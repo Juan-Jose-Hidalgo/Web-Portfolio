@@ -15,6 +15,7 @@
     font-family: map-get($map: var.$fonts-map, $key: "secondary");
     letter-spacing: .3em;
     text-align: center;
+    cursor: pointer;
 
     &:hover {
         color: map-get($map: var.$colors-map, $key: "white2");

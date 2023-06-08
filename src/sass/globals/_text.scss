@@ -2,20 +2,24 @@
 @use "variables" as var;
 
 .heading-1 {
-    color: map-get($map: var.$colors-map, $key: "primary");
+    color: map-get($map: var.$colors-map, $key: "white");
     font-family: map-get($map: var.$fonts-map, $key: "secondary");
-    font-weight: bold;
     font-size: 2.5rem;
     text-align: center;
     text-transform: uppercase;
     text-shadow: 1px 1px 1px map-get($map: var.$colors-map, $key: "secondary");
+    margin: 2rem 0;
+
+    &::first-letter {
+        color: map-get($map: var.$colors-map, $key: "primary");
+    }
 
     @media (min-width: 768px) {
-        font-size: 3.5rem;
+        font-size: 3.8rem;
     }
 
     @media (min-width: 1400px) {
-        font-size: 4.5rem;
+        font-size: 5rem;
     }
 
 }
@@ -24,11 +28,25 @@
     font-size: 2em;
     font-weight: bold;
     text-align: center;
-    margin: 1rem 0;
+    margin: 3rem 0;
 
     &::first-letter {
         color: map-get($map: var.$colors-map, $key: "primary");
     }
+
+    @media (min-width:768px) {
+        font-size: 3em;
+    }
+
+    @media (min-width:1330px) {
+        font-size: 3.5em;
+    }
+}
+
+.heading-3 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 2rem 0;
 
     @media (min-width:768px) {
         font-size: 3em;
