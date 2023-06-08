@@ -5,6 +5,7 @@
     @include mix.flex-box(column, nowrap, flex-start, center);
     gap: 2rem;
     width: 85%;
+    max-width: 100rem;
     margin: 0 auto;
     padding: 1rem;
 }
