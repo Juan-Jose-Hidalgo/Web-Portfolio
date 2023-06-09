@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
   },
   {
-    path: 'projectos',
+    path: 'proyectos',
     loadChildren: () => import('./pages/projects/projects.module').then(m => m.ProjectsModule)
   },
   { path: '**', pathMatch: 'full', redirectTo: 'inicio' }
