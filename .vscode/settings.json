@@ -3,6 +3,7 @@
         "main",
         "develop",
         "home",
-        "ngrx"
+        "ngrx",
+        "projects"
     ]
 }

@@ -15,8 +15,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 
-
-
 @NgModule({
   declarations: [
     HomeComponent,
