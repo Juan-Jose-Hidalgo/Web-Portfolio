@@ -1,4 +1,4 @@
-@use "variables" as color;
+@use "variables" as var;
 
 .scroll-bar {
     height: 100vh;
@@ -6,4 +6,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
+}
+
+.projects-main{
+    background-color: map-get($map: var.$colors-map, $key: "white");
+    min-height: 100vh;
 }
