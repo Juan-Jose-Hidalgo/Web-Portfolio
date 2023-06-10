@@ -28,6 +28,7 @@
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "firebase": "^9.22.1",
+    "ng-gallery": "^9.0.1",
     "ngx-scrollbar": "^12.0.0",
     "rxjs": "~7.8.0",
     "t-writer.js": "^1.0.4",

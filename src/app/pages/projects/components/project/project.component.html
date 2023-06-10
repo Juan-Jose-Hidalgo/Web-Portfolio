@@ -1,1 +1,10 @@
-<h1>proyecto</h1>
+<div class="project-wrapper">
+
+    <header class="project-wrapper__header">
+        <h1 class="heading-1">{{ (project$ | async)?.title }}</h1>
+    </header>
+
+    <ng-container *ngIf="images.length">
+        <app-project-gallery [images]="images" [imagesWebp]="imagesWebp"></app-project-gallery>
+    </ng-container>
+</div>

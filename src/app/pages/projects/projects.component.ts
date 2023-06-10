@@ -1,21 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { getSingleProjectAction } from 'src/app/state/actions/single-project.actions';
-import { AppState } from 'src/app/state/app.state';
-import { selectSingleProject } from 'src/app/state/selectors/single-project.selectors';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { NgScrollbar } from 'ngx-scrollbar';
+import * as Aos from 'aos';
+
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent implements AfterViewInit {
 
-  constructor(
-    private store: Store<AppState>
-  ) { }
+  @ViewChild(NgScrollbar) scrollable!: NgScrollbar;
 
-  ngOnInit(): void {
-    this.store.dispatch(getSingleProjectAction({ id: 'sTrwiL0l0CW45h2P3olI' }))
+  ngAfterViewInit(): void {
+    this.scrollable.scrolled.subscribe(() => Aos.refresh())
   }
 }
