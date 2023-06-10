@@ -30,7 +30,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    NgScrollbarModule.withConfig({ visibility: 'hover', position:'invertY' }),
+    NgScrollbarModule.withConfig({ visibility: 'hover', position: 'invertY' }),
     SharedModule,
     //* Firebase
     provideFirebaseApp(() => initializeApp(environment.firebase)),

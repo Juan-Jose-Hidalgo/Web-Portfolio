@@ -18,6 +18,18 @@ export class ProjectsEffects {
         )
     );
 
+    getProject$ = createEffect(() => this.actions$
+        .pipe(
+            ofType('[Project] Get Single Project'),
+            mergeMap((action: any) => this.projectsService.get(action.id)
+                .pipe(
+                    map(project => ({ type: '[Project] Get Single Project Success', project })),
+                    catchError((error: any) => of({ type: '[Project] Get Single Project Failure', message: error.error.message }))
+                )
+            )
+        )
+    );
+
     constructor(
         private actions$: Actions,
         private projectsService: ProjectsService

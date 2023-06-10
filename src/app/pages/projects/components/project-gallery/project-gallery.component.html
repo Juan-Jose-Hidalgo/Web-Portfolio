@@ -1,0 +1,25 @@
+<div class="carousel" *ngIf="images.length >0">
+
+    <!--* Gallery -->
+    <div class="carousel__image" *ngFor="let img of images; let i = index"
+        [ngClass]="{'carousel__image--active':selectedIndex === i}">
+        <img [src]="img" alt="Imagen de galería" class="carousel__img animate__animated" [ngClass]="classes">
+    </div>
+
+    <!--* Dots -->
+    <div class="carousel__dots">
+        <span class="carousel__dot" *ngFor="let dot of images; let i = index"
+            [ngClass]="{'carousel__dot--active':selectedIndex === i}" (click)="selectImage(i)">
+        </span>
+    </div>
+
+    <!--* Buttons -->
+    <div class="carousel__btn carousel__btn--prev" (click)="previewClick()">
+        <i class="fa-solid fa-circle-chevron-left carousel__icon carousel__icon--prev"></i>
+    </div>
+
+    <div class="carousel__btn carousel__btn--next" (click)="nextClick()">
+        <i class="fa-solid fa-circle-chevron-right carousel__icon carousel__icon--next"></i>
+    </div>
+
+</div>
