@@ -5,7 +5,7 @@ export interface IProject {
     createdAt: Date;
     images: string[];
     imagesWebp: string[];
-    longDescription: string[];
+    longDescription: any;
     shortDescription: string;
     repository: string;
     technologies: string[];
