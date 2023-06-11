@@ -1,6 +1,4 @@
 @use "mixins" as mix;
-@use "variables" as var;
-
 .about {
     @include mix.flex-box(column, nowrap, flex-start, center);
     gap: 2rem;
@@ -9,40 +7,33 @@
     margin: 0 auto;
     padding: 1rem;
 }
-
 .about__wrapper {
     @include mix.flex-box(row, wrap, space-between, center);
     gap: 2rem;
 }
-
 .about__text {
     @include mix.flex-box(column, nowrap, center, center);
     text-align: justify;
     gap: 1rem;
     width: 100%;
-
     @media (min-width:1330px) {
         order: 2;
         width: calc(70% - 2rem);
     }
 }
-
 .about__image {
     position: relative;
     width: 100%;
     height: 12.5rem;
-
     @media (min-width:768px) {
         height: 18.75rem;
     }
-
     @media (min-width:1330px) {
         order: 1;
         width: calc(30% - 2rem);
         height: 25rem;
     }
 }
-
 .about__img {
     object-fit: contain;
 }

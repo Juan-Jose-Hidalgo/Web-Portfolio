@@ -14,6 +14,8 @@ import {
 } from '@angular/fire/firestore';
 import { Observable, map } from 'rxjs';
 import { IProject } from '../models/project.interface';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+
 
 @Injectable({
   providedIn: 'root'

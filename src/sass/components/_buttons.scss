@@ -46,9 +46,16 @@
     padding: 10px 16px;
     letter-spacing: .1em;
     font-size: .8em;
+    width: 100%;
+    margin-bottom: .5rem;
 
     &::after {
         padding: 8px 14px;
+    }
+
+    @media (min-width:1330px) {
+        width: auto;
+        margin: 0 .5rem 0 0;
     }
 }
 
@@ -60,7 +67,7 @@
         color: map-get($map: var.$colors-map, $key: "white2");
     }
 
-    &::after{
+    &::after {
         background: map-get($map: var.$colors-map, $key: "warn");
     }
 }
@@ -73,7 +80,7 @@
         color: map-get($map: var.$colors-map, $key: "white2");
     }
 
-    &::after{
+    &::after {
         background: map-get($map: var.$colors-map, $key: "accent");
     }
 }

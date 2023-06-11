@@ -68,9 +68,18 @@
 }
 
 .regular-text {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    margin-bottom: .5rem;
+    text-align: justify;
+    color: map-get($map: var.$fonts-map, $key: "text");
 
     @media (min-width: 768px) {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+    }
+
+    @media (min-width:1330px) {
+        margin-bottom: 1.5rem;
     }
 }
