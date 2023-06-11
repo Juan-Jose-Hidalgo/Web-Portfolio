@@ -3,7 +3,10 @@
     <!--* Gallery -->
     <div class="carousel__image" *ngFor="let img of images; let i = index"
         [ngClass]="{'carousel__image--active':selectedIndex === i}">
-        <img [src]="img" alt="Imagen de galería" class="carousel__img animate__animated" [ngClass]="classes">
+        <picture class="carousel__picture">
+            <source [srcset]="imagesWebp[i]" type="image/webp" accept="image/webp">
+            <img [ngSrc]="img" fill alt="Imagen de galería" class="carousel__img animate__animated" [ngClass]="classes">
+        </picture>
     </div>
 
     <!--* Dots -->

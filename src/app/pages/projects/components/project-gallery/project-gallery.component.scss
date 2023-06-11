@@ -16,16 +16,18 @@
     &--active {
         position: relative;
         display: block;
+        height: 12.5rem;
+        width: calc(100% - 30%);
+        margin: 0 auto;
     }
 
     @media (min-width:768px) {
-        height: 400px;
+        height: 25rem;
     }
 }
 
 .carousel__img {
     object-fit: contain;
-    height: 100%;
 }
 
 .carousel__dots {
@@ -41,8 +43,8 @@
 
 .carousel__dot {
     cursor: pointer;
-    height: 13px;
-    width: 13px;
+    height: .8125rem;
+    width: .8125rem;
     margin: 0 5px;
     background-color: map-get($map: var.$colors-map, $key: "primary");
     border-radius: 50%;
@@ -56,20 +58,16 @@
 }
 
 .carousel__btn {
+    @include mix.flex-box(row,nowrap,center,center);
     position: absolute;
     top: 0;
     bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 15%;
     text-align: center;
     cursor: pointer;
-
     &--prev {
         left: 0;
     }
-
     &--next {
         right: 0;
     }
