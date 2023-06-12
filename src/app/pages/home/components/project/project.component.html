@@ -16,6 +16,6 @@
 
     <div class="home-project__actions">
         <a (click)="projectInfo()" class="btn-spin btn-spin--small">Leer más</a>
-        <a href="#" class="btn-spin btn-spin--small btn-spin--accent">Visitar página</a>
+        <a [href]="project.url" target="_blank" class="btn-spin btn-spin--small btn-spin--accent">Visitar página</a>
     </div>
 </div>
