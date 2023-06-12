@@ -1,0 +1,65 @@
+@use "mixins" as mix;
+@use "variables" as var;
+
+.project-wrapper__header {
+    background-color: map-get($map: var.$colors-map, $key: "white");
+}
+
+.heading-1 {
+    margin: 0;
+    color: map-get($map: var.$colors-map, $key: "text");
+}
+
+.project-wrapper__gallery {
+    width: 100%;
+    background-color: transparent;
+}
+
+.project-wrapper__info {
+    padding: 2rem 0;
+    background-color: map-get($map: var.$colors-map, $key: "white");
+}
+
+.project-wrapper__tech-list {
+    @include mix.flex-box(row, nowrap, center, center);
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.project-wrapper__tech {
+    font-size: 2rem;
+    color: map-get($map: var.$colors-map, $key: "secondary");
+}
+
+.project-wrapper__description {
+    padding: 2rem 1rem;
+
+    @media (min-width:768px) {
+        padding: 0;
+        width: 85%;
+        max-width: 100rem;
+        margin: 0 auto;
+    }
+
+    @media (min-width:1440px) {
+        width: 60%;
+    }
+
+    @media (min-width:1330px) {
+        padding: 4rem 0;
+    }
+}
+
+.project-wrapper__a {
+    color: map-get($map: var.$colors-map, $key: "accent");
+    transition: all .5s ease;
+
+    &:hover {
+        color: map-get($map: var.$colors-map, $key: "warn");
+    }
+}
+
+.project-wrapper__actions {
+    @include mix.flex-box(row, wrap, flex-start, center);
+    padding: 1rem 0;
+}

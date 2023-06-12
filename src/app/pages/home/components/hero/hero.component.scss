@@ -1,0 +1,41 @@
+@use "variables" as var;
+@use "mixins" as mix;
+
+.hero {
+    @include mix.flex-box(column, norwap, center, center);
+    width: 100;
+    height: 100vh;
+}
+
+.hero__wrapper {
+    @include mix.flex-box(row, nowrap, space-between, center);
+    width: 100%;
+    height: 100%;
+}
+
+.hero__cover {
+    display: none;
+
+    @media(min-width: 1330px) {
+        display: block;
+        position: relative;
+        width: 37.5rem;
+        height: 100%;
+    }
+}
+
+.hero__info {
+    margin: 0 auto;
+    color: map-get($map: var.$colors-map, $key: "white");
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    text-align: center;
+
+    @media(min-width:1330px) {
+        text-align: left;
+    }
+}
+
+.hero__span {
+    font-size: 1.2em;
+    font-style: italic;
+}

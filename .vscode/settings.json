@@ -1,0 +1,9 @@
+{
+    "conventionalCommits.scopes": [
+        "main",
+        "develop",
+        "home",
+        "ngrx",
+        "projects"
+    ]
+}

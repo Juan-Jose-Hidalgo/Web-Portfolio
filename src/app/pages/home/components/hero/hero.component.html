@@ -1,0 +1,25 @@
+<header class="hero">
+
+    <div class="hero__wrapper">
+
+        <!--* Cover image -->
+        <div class="hero__cover animate__animated animate__fadeInLeft">
+            <picture>
+                <source srcset="/assets/img/perfil.webp" type="image/webp" accept="image/webp">
+                <img class="hero__img" ngSrc="/assets/img/perfil.png" fill priority alt="Imagen de portada">
+            </picture>
+        </div>
+
+        <!--* Cover info -->
+        <div class="hero__info">
+            <p class="hero__span animate__animated animate__fadeInUp hero-2">Hola! Me llamo</p>
+            <h2 class="heading-3 animate__animated animate__fadeInUp hero-4">Juan
+                Hidalgo</h2>
+            <p class="hero__span animate__animated animate__fadeInUp hero-6">Y soy</p>
+            <h1 #profession class="heading-1 animate__animated animate__fadeInUp hero-8">
+                Desarrollador Web</h1>
+            <a (click)="goToProyects()" class="btn-spin animate__animated animate__fadeInUp hero-10" title="A proyectos">Proyectos</a>
+        </div>
+    </div>
+
+</header>

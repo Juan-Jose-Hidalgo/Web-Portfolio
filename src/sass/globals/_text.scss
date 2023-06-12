@@ -2,45 +2,58 @@
 @use "variables" as var;
 
 .heading-1 {
-    color: map-get($map: var.$colors-map, $key: "primary");
+    color: map-get($map: var.$colors-map, $key: "white");
     font-family: map-get($map: var.$fonts-map, $key: "secondary");
-    font-weight: bold;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
-    text-shadow: 1px 1px 1px map-get($map: var.$colors-map, $key: "white");
-
-    @media (min-width: 576px) {
-        font-size: 2.8rem;
-    }
-
-    @media (min-width: 768px) {
-        font-size: 3.5rem;
-    }
-
-    @media (min-width: 1200px) {
-        font-size: 4rem;
-    }
-
-}
-
-.heading-2 {
-    font-size: 1.8rem;
-    font-family: map-get($map: var.$fonts-map, $key: "secondary");
-    padding: 3rem 0;
-    text-align: center;
-
-    @media (min-width: 768px) {
-        font-size: 2.8rem;
-    }
-
-    @media (min-width: 992px) {
-        font-size: 3rem;
-    }
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px map-get($map: var.$colors-map, $key: "secondary");
+    margin: 2rem 0;
 
     &::first-letter {
         color: map-get($map: var.$colors-map, $key: "primary");
     }
 
+    @media (min-width: 768px) {
+        font-size: 3.8rem;
+    }
+
+    @media (min-width: 1400px) {
+        font-size: 5rem;
+    }
+
+}
+
+.heading-2 {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+
+    &::first-letter {
+        color: map-get($map: var.$colors-map, $key: "primary");
+    }
+
+    @media (min-width:768px) {
+        font-size: 3em;
+    }
+
+    @media (min-width:1330px) {
+        font-size: 3.5em;
+    }
+}
+
+.heading-3 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 2rem 0;
+
+    @media (min-width:768px) {
+        font-size: 3em;
+    }
+
+    @media (min-width:1330px) {
+        font-size: 3.5em;
+    }
 }
 
 .subheading-1 {
@@ -55,9 +68,18 @@
 }
 
 .regular-text {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    margin-bottom: .5rem;
+    text-align: justify;
+    color: map-get($map: var.$fonts-map, $key: "text");
 
     @media (min-width: 768px) {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+    }
+
+    @media (min-width:1330px) {
+        margin-bottom: 1.5rem;
     }
 }

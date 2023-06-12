@@ -1,0 +1,84 @@
+@use "variables" as var;
+@use "mixins" as mix;
+
+.carousel {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    padding: 3rem 0;
+    overflow: hidden;
+}
+
+.carousel__image {
+    display: none;
+
+    &--active {
+        position: relative;
+        display: block;
+        height: 12.5rem;
+        width: calc(100% - 30%);
+        margin: 0 auto;
+    }
+
+    @media (min-width:768px) {
+        height: 25rem;
+    }
+}
+
+.carousel__img {
+    object-fit: contain;
+}
+
+.carousel__dots {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.carousel__dot {
+    cursor: pointer;
+    height: .8125rem;
+    width: .8125rem;
+    margin: 0 5px;
+    background-color: map-get($map: var.$colors-map, $key: "primary");
+    border-radius: 50%;
+    transition: opacity .6s ease;
+    opacity: .5;
+
+    &:hover,
+    &--active {
+        opacity: 1;
+    }
+}
+
+.carousel__btn {
+    @include mix.flex-box(row,nowrap,center,center);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 15%;
+    text-align: center;
+    cursor: pointer;
+    &--prev {
+        left: 0;
+    }
+    &--next {
+        right: 0;
+    }
+}
+
+.carousel__icon {
+    font-size: 2rem;
+    color: map-get($map: var.$colors-map, $key: "primary");
+    transition: all .3s ease;
+
+    &:hover {
+        color: map-get($map: var.$colors-map, $key: "secondary");
+    }
+}

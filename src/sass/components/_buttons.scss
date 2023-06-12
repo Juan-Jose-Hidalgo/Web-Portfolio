@@ -1,0 +1,103 @@
+@use "mixins" as mix;
+@use "variables" as var;
+
+.btn-spin {
+    color: map-get($map: var.$colors-map, $key: "primary");
+    border: 2px solid map-get($map: var.$colors-map, $key: "primary");
+    padding: 1rem 1.25rem;
+    border-radius: 3px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    letter-spacing: .3em;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        color: map-get($map: var.$colors-map, $key: "white2");
+
+        &::after {
+            transition: all 0.3s ease-out;
+            transform: scale(1, 1) rotate(0deg);
+        }
+    }
+
+    &::after {
+        content: "";
+        background: map-get($map: var.$colors-map, $key: "primary");
+        position: absolute;
+        z-index: -1;
+        padding: 1rem 1.25rem;
+        display: block;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        transform: scale(0, 0) rotate(-180deg);
+        transition: all 0.3s ease;
+    }
+}
+
+.btn-spin--small {
+    padding: 10px 16px;
+    letter-spacing: .1em;
+    font-size: .8em;
+    width: 100%;
+    margin-bottom: .5rem;
+
+    &::after {
+        padding: 8px 14px;
+    }
+
+    @media (min-width:1330px) {
+        width: auto;
+        margin: 0 .5rem 0 0;
+    }
+}
+
+.btn-spin--warn {
+    color: map-get($map: var.$colors-map, $key: "warn");
+    border: 2px solid map-get($map: var.$colors-map, $key: "warn");
+
+    &:hover {
+        color: map-get($map: var.$colors-map, $key: "white2");
+    }
+
+    &::after {
+        background: map-get($map: var.$colors-map, $key: "warn");
+    }
+}
+
+.btn-spin--accent {
+    color: map-get($map: var.$colors-map, $key: "accent");
+    border: 2px solid map-get($map: var.$colors-map, $key: "accent");
+
+    &:hover {
+        color: map-get($map: var.$colors-map, $key: "white2");
+    }
+
+    &::after {
+        background: map-get($map: var.$colors-map, $key: "accent");
+    }
+}
+
+.btn-menu {
+    @include mix.flex-box(column, nowrap, center, center);
+    position: fixed;
+    top: 1.25rem;
+    right: 1.25rem;
+    cursor: pointer;
+    border: 0;
+    width: 4rem;
+    height: 4rem;
+    gap: 1.1rem;
+    z-index: 2;
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: map-get($map: var.$colors-map, $key: "white");
+    box-shadow: 0 0.15rem 0.3rem rgba(0, 0, 0, 0.3), 0 0.05rem 0.1rem rgba(0, 0, 0, 0.1);
+}

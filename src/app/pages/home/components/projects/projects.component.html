@@ -1,0 +1,23 @@
+<section class="home-projects">
+
+    <h2 class="heading-2" data-aos="fade-up">Proyectos</h2>
+
+    <ul class="home-projects__list">
+
+        <li class="home-projects__li" *ngFor="let project of projects$ |async">
+            <article class="home-project" data-aos="fade-left">
+                <app-project [project]="project"></app-project>
+            </article>
+        </li>
+
+        <li class="home-projects__li">
+            <article class="home-project home-project--mock" data-aos="fade-left">
+                <span class="home-project__span">
+                    Próximamente
+                </span>
+            </article>
+        </li>
+
+    </ul>
+
+</section>

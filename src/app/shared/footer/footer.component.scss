@@ -1,0 +1,47 @@
+@use "variables" as var;
+@use "mixins" as mix;
+
+.foot{
+    width: 100%;
+}
+
+.wave {
+    height: 9.375rem;
+    overflow: hidden;
+}
+
+.wave__svg {
+    height: 100%;
+    width: 100%;
+}
+
+.wave__path {
+    stroke: none;
+    fill: map-get($map: var.$colors-map, $key: "white");
+}
+
+.foot__container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 4rem 0;
+    @include mix.flex-box(column, nowrap, center, center);
+    gap: 1.5rem;
+}
+
+.foot__p {
+    font-size: 1.3em;
+    font-family: map-get($map: var.$fonts-map, $key: "secondary");
+    color: map-get($map: var.$colors-map, $key: "white");
+
+    @media (min-width: 992px) {
+        font-size: 1.8em;
+    }
+}
+
+.foot__p--legal {
+    color: map-get($map: var.$colors-map, $key: "accent");
+    font-size: 1em;
+    text-align: center;
+    cursor: pointer;
+}

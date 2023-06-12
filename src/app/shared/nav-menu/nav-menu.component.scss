@@ -1,0 +1,134 @@
+@use "mixins" as mix;
+@use "variables" as var;
+
+.menu {
+    @include mix.flex-box(row, nowrap, space-between, center);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: map-get($map: var.$colors-map, $key: "black");
+    z-index: 2;
+    transition: all .5s ease;
+}
+
+.menu--active {
+    top: -150%;
+}
+
+.menu__banner {
+    position: relative;
+    width: 37.5rem;
+    height: 100%;
+
+    @media(max-width:991px) {
+        display: none;
+    }
+}
+
+.menu__banner-img {
+    filter: grayscale(100%);
+}
+
+.menu__links {
+    margin: 0 auto;
+    @include mix.flex-box(column, nowrap, center, center);
+    align-self: center;
+    gap: 5rem;
+
+    @media screen and (orientation: landscape) and (max-width: 1000px) {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 1rem;
+    }
+}
+
+.links__social {
+    width: 100%;
+}
+
+.nav {
+    @include mix.flex-box(row, nowrap, center, center);
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.nav__ul {
+    position: relative;
+}
+
+.nav__li {
+    position: relative;
+    list-style: none;
+    padding: 0 1.25rem;
+    margin: .3125rem 0;
+    overflow: hidden;
+    display: table;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: map-get(var.$colors-map, "primary");
+        transition: transform 0.5s ease-in-out;
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+
+    &:hover::before {
+        transition: transform 0.5s ease-in-out;
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+}
+
+.nav__a {
+    position: relative;
+    color: map-get(var.$colors-map, "white");
+    text-decoration: none;
+    font-family: map-get(var.$fonts-map, "secondary");
+    font-size: 4em;
+    font-weight: 700;
+    line-height: 1.5em;
+    display: inline-block;
+    text-transform: uppercase;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+
+    @media(max-width:991px) {
+        font-size: 3rem;
+    }
+
+    @media screen and (orientation: landscape) and (max-width: 1000px) {
+        font-size: 2em;
+    }
+
+    &::before {
+        content: attr(data-text);
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        color: map-get(var.$colors-map, "text");
+    }
+
+    &:hover {
+        transform: translateY(-100%);
+        color: map-get(var.$colors-map, "white");
+    }
+}
+
+.btn--menu__icon {
+    color: map-get(var.$colors-map, "primary");
+    font-size: 2em;
+    transition: all .5s ease;
+
+    &:hover{
+        color: map-get($map: var.$colors-map, $key: "accent");
+    }
+}

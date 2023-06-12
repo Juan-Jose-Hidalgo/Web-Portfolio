@@ -1,0 +1,22 @@
+@use "variables/colors" as var;
+@use "mixins" as mix;
+
+.rrss__ul {
+    @include mix.flex-box(row, wrap, space-around, center);
+    width: 100%;
+    gap: 2rem;
+}
+
+.rrss__a{
+    font-size: 2rem;
+    color: map-get($map: var.$colors-map, $key: "primary");
+    transition: all .3s ease;
+
+    &:hover{
+        color: map-get($map: var.$colors-map, $key: "accent");
+    }
+
+    @media (min-width:768px) {
+        font-size: 2.5rem;
+    }
+}

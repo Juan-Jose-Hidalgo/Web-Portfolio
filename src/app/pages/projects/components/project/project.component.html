@@ -1,0 +1,49 @@
+<div class="project-wrapper">
+
+    <header class="project-wrapper__header">
+        <h1 class="heading-1">{{ (project$ | async)?.title }}</h1>
+    </header>
+
+    <!--* Gallery component -->
+    <ng-container *ngIf="images.length">
+        <app-project-gallery [images]="images" [imagesWebp]="imagesWebp"></app-project-gallery>
+    </ng-container>
+
+    <div class="project-wrapper__info">
+
+        <!--* Technologies block -->
+        <section class="project-wrapper__technologies">
+            <h2 class="heading-2">Tecnologías utilizadas</h2>
+
+            <ng-container *ngIf="icons">
+                <ul class="project-wrapper__tech-list">
+                    <li *ngFor="let icon of icons">
+                        <i [ngClass]="icon" class="project-wrapper__tech"></i>
+                    </li>
+                </ul>
+            </ng-container>
+        </section>
+
+        <!--* Proyect description -->
+        <section class="project-wrapper__description">
+
+            <div *ngIf="longDescription" [innerHTML]="longDescription"></div>
+
+            
+
+            <div class="project-wrapper__actions">
+                <a [href]="(project$|async)?.url" title="Visitar app" class="btn-spin btn-spin--small" target="_blank">
+                    <i class="fa-solid fa-earth-europe"></i>
+                    <span>Ver Online</span>
+                </a>
+                <a [href]="(project$|async)?.repository" title="Ver respositorio" class="btn-spin btn-spin--small btn-spin--accent"
+                    target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                    <span>Ver Repositorio</span>
+                </a>
+            </div>
+
+        </section>
+
+    </div>
+</div>

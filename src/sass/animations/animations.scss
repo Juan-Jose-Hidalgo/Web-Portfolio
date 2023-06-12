@@ -1,0 +1,7 @@
+@import "~animate.css/animate.min.css";
+
+@for $i from 1 through 100 {
+    .hero-#{$i} {
+        animation-delay: #{$i/10}s;
+    }
+}
